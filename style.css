@@ -1,0 +1,359 @@
+/*
+ * Tuition Point Website Stylesheet
+ *
+ * This file defines the common styles used across all pages of the
+ * Tuition Point website. The design aims to be clean, modern and
+ * parent‑friendly with a strong focus on accessibility and readability.
+ * A simple colour palette based on blues and greens conveys trust and
+ * growth, while a warm orange accent colour draws attention to calls
+ * to action. Typography is kept clear and comfortable for easy
+ * reading on both desktop and mobile devices.
+ */
+
+/* Root variables for easy theme customisation */
+:root {
+  --primary-color: #2e86c1;      /* calming educational blue */
+  --secondary-color: #1abc9c;    /* growth‑oriented green */
+  --accent-color: #f39c12;       /* warm orange for CTAs */
+  --dark-color: #333333;         /* main text colour */
+  --light-color: #f8f9fa;        /* page background */
+  --max-width: 1200px;           /* maximum content width */
+}
+
+/* Global resets and base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: var(--dark-color);
+  background-color: var(--light-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--dark-color);
+}
+
+p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Header and navigation */
+header {
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+nav li {
+  margin-right: 1.25rem;
+}
+
+nav li:last-child {
+  margin-right: 0;
+}
+
+nav a {
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.25rem 0;
+}
+
+/* CTA button styling */
+.cta-button {
+  background-color: var(--accent-color);
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #e37c09;
+}
+
+/* Hero section */
+.hero {
+  background-image: url('../images/hero_home.png');
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  text-align: center;
+  padding: 140px 20px 160px;
+  position: relative;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /*
+   * Darken the hero image slightly more than the default to improve
+   * contrast and legibility of the overlaid headline and description.
+   * Increasing the alpha value from 0.4 to 0.6 helps ensure text
+   * stands out against complex backgrounds without obscuring the
+   * underlying illustration.
+   */
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+/* Generic section container */
+.section {
+  padding: 60px 20px;
+}
+
+.section-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+/* Cards layout */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 25px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card svg {
+  height: 48px;
+  width: 48px;
+  fill: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--dark-color);
+}
+
+.card p {
+  font-size: 1rem;
+  color: #555555;
+}
+
+/* Testimonials */
+.testimonials {
+  background-color: #ffffff;
+  padding: 60px 20px;
+}
+
+.testimonial {
+  background-color: #f9fafb;
+  border-radius: 8px;
+  padding: 30px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.testimonial .stars {
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+.testimonial p {
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.testimonial .author {
+  font-weight: bold;
+  color: var(--dark-color);
+}
+
+/* FAQ accordion style (for KS pages) */
+.faq-item {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 15px 0;
+}
+
+.faq-question {
+  cursor: pointer;
+  position: relative;
+  padding-right: 30px;
+  font-weight: 600;
+}
+
+.faq-question::after {
+  content: '+';
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-weight: 700;
+  transition: transform 0.2s ease;
+}
+
+.faq-item.open .faq-question::after {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.faq-item.open .faq-answer {
+  max-height: 500px;
+}
+
+/* Footer styles */
+.footer {
+  background-color: #222222;
+  color: #ffffff;
+  padding: 40px 20px;
+}
+
+.footer-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.footer h4 {
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer li {
+  margin-bottom: 0.5rem;
+}
+
+.footer a {
+  color: #bbbbbb;
+  transition: color 0.2s ease;
+}
+
+.footer a:hover {
+  color: #ffffff;
+}
+
+.footer .social-icons {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.footer .social-icons svg {
+  width: 24px;
+  height: 24px;
+  fill: #bbbbbb;
+  transition: fill 0.2s ease;
+}
+
+.footer .social-icons svg:hover {
+  fill: var(--accent-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  nav ul {
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+  }
+  nav li {
+    margin-right: 0.75rem;
+  }
+  .hero {
+    padding: 100px 20px 120px;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .cards {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
